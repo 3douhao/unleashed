@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <title>
+      {% block title %}
+        Startup Organizer
+      {% endblock %}
+    </title>
+  </head>
+  <body>
+    <div>
+      <header>
+        <h1>Startup Organizer</h1>
+      <main>
+        {% block content %}
+          This is default content!
+        {% endblock %}
+      </main>
+      </header>
+    </div>
+    <footer>
+      <p>
+        &copy; 2018
+        <a href="https://AndrewsForge.com">Andrew PInkham</a>
+      </p>
+      <p>Created for
+        <a href="https://Django-Unleashed.com">Django Unleashed</a>
+      </p>
+    </footer>
+  </body>
+</html>
+
+<nav>
+  <ul>
+    <li>
+      <a href="">{% url 'blog_post_list' %}</a>
+    </li>
+    <li>
+      <a href="">{% url 'organizer_startup_list' %}</a>
+    </li>
+    <li>
+      <a href="">{% url 'organizer_tag_list' %}</a>
+    </li>
+  </ul>
+</nav>
