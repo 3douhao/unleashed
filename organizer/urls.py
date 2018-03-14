@@ -1,6 +1,6 @@
 from django.urls.conf import path, re_path
 
-from .views import  tag_list, startup_list, startup_detail, TagCreate, StartupCreate, NewsLinkCreate, NewsLinkUpdate, TagUpdate, NewsLinkDelete, TagDelete, StartupDelete, StartupUpdate
+from .views import tag_detail, tag_list, startup_list, startup_detail, TagCreate, StartupCreate, NewsLinkCreate, NewsLinkUpdate, TagUpdate, NewsLinkDelete, TagDelete, StartupDelete, StartupUpdate
 
 urlpatterns = [
     re_path(r'^newslink/create/$', NewsLinkCreate.as_view(), name='organizer_newslink_create'),

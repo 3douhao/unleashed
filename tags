@@ -19,9 +19,16 @@ Meta	organizer/forms.py	/^    class Meta:$/;"	c	class:NewsLinkForm
 Meta	organizer/forms.py	/^    class Meta:$/;"	c	class:StartupForm
 Meta	organizer/forms.py	/^    class Meta:$/;"	c	class:TagForm
 Meta	organizer/models.py	/^    class Meta():$/;"	c	class:Startup
+Meta	organizer/models.py	/^    class Meta:$/;"	c	class:NewsLink
 Meta	organizer/models.py	/^    class Meta:$/;"	c	class:Tag
 Migration	blog/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	blog/migrations/0002_post_data.py	/^class Migration(migrations.Migration):$/;"	c
 Migration	organizer/migrations/0001_initial.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	organizer/migrations/0002_tag_data.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	organizer/migrations/0003_startup_data.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	organizer/migrations/0004_newslink_data.py	/^class Migration(migrations.Migration):$/;"	c
+Migration	organizer/migrations/0005_newslink_slug.py	/^class Migration(migrations.Migration):$/;"	c
+NEWSLINKS	organizer/migrations/0004_newslink_data.py	/^NEWSLINKS = [$/;"	v
 NewsLink	organizer/models.py	/^class NewsLink(models.Model):$/;"	c
 NewsLinkCreate	organizer/views.py	/^class NewsLinkCreate(ObjectCreateMixin, View):$/;"	c
 NewsLinkDelete	organizer/views.py	/^class NewsLinkDelete(View):$/;"	c
@@ -31,6 +38,7 @@ ObjectCreateMixin	organizer/utils.py	/^class ObjectCreateMixin:$/;"	c
 ObjectDeleteMixin	organizer/utils.py	/^class ObjectDeleteMixin:$/;"	c
 ObjectUpdateMixin	organizer/utils.py	/^class ObjectUpdateMixin:$/;"	c
 OrgainzerConfig	organizer/apps.py	/^class OrgainzerConfig(AppConfig):$/;"	c
+POSTS	blog/migrations/0002_post_data.py	/^POSTS = [$/;"	v
 Post	blog/models.py	/^class Post(models.Model):$/;"	c
 PostCreate	blog/views.py	/^class PostCreate(View):$/;"	c
 PostDelete	blog/views.py	/^class PostDelete(View):$/;"	c
@@ -39,6 +47,8 @@ PostList	blog/views.py	/^class PostList(View):$/;"	c
 PostUpdate	blog/views.py	/^class PostUpdate(View):$/;"	c
 ROOT_URLCONF	suorganizer/settings.py	/^ROOT_URLCONF = 'suorganizer.urls'$/;"	v
 SECRET_KEY	suorganizer/settings.py	/^SECRET_KEY = 'r!tv*4gx1zqpkxe4z2wm&w7+4qkz*blw7_i)n^0-&o#=f&dx9d'$/;"	v
+SLUG_LENGTH	organizer/migrations/0005_newslink_slug.py	/^SLUG_LENGTH = 63$/;"	v
+STARTUPS	organizer/migrations/0003_startup_data.py	/^STARTUPS = [$/;"	v
 STATIC_URL	suorganizer/settings.py	/^STATIC_URL = '\/static\/'$/;"	v
 SlugCleanMixin	organizer/forms.py	/^class SlugCleanMixin:$/;"	c
 Startup	organizer/models.py	/^class Startup(models.Model):$/;"	c
@@ -47,10 +57,11 @@ StartupCreate	organizer/views.py	/^class StartupCreate(ObjectCreateMixin, View):
 StartupDelete	organizer/views.py	/^class StartupDelete(ObjectDeleteMixin, View):$/;"	c
 StartupForm	organizer/forms.py	/^class StartupForm(SlugCleanMixin, forms.ModelForm):$/;"	c
 StartupUpdate	organizer/views.py	/^class StartupUpdate(ObjectUpdateMixin, View):$/;"	c
+TAGS	organizer/migrations/0002_tag_data.py	/^TAGS = ($/;"	v
 TEMPLATES	suorganizer/settings.py	/^TEMPLATES = [$/;"	v
 TIME_ZONE	suorganizer/settings.py	/^TIME_ZONE = 'UTC'$/;"	v
 Tag	organizer/models.py	/^class Tag(models.Model):$/;"	c
-TagCreate	organizer/views.py	/^class TagCreate(ObjectCreateMixin,View):$/;"	c
+TagCreate	organizer/views.py	/^class TagCreate(ObjectCreateMixin, View):$/;"	c
 TagDelete	organizer/views.py	/^class TagDelete(ObjectDeleteMixin, View):$/;"	c
 TagForm	organizer/forms.py	/^class TagForm(SlugCleanMixin, forms.ModelForm):$/;"	c
 TagUpdate	organizer/views.py	/^class TagUpdate(ObjectUpdateMixin, View):$/;"	c
@@ -59,19 +70,31 @@ USE_L10N	suorganizer/settings.py	/^USE_L10N = True$/;"	v
 USE_TZ	suorganizer/settings.py	/^USE_TZ = True$/;"	v
 WSGI_APPLICATION	suorganizer/settings.py	/^WSGI_APPLICATION = 'suorganizer.wsgi.application'$/;"	v
 __str__	blog/models.py	/^    def  __str__(self):$/;"	m	class:Post	file:
-__str__	organizer/models.py	/^    def  __str__(self):$/;"	m	class:NewsLink	file:
-__str__	organizer/models.py	/^    def  __str__(self):$/;"	m	class:Startup	file:
-__str__	organizer/models.py	/^    def  __str__(self):$/;"	m	class:Tag	file:
+__str__	organizer/models.py	/^    def __str__(self):$/;"	m	class:NewsLink	file:
+__str__	organizer/models.py	/^    def __str__(self):$/;"	m	class:Startup	file:
+__str__	organizer/models.py	/^    def __str__(self):$/;"	m	class:Tag	file:
+add_newslink_data	organizer/migrations/0004_newslink_data.py	/^def add_newslink_data(apps, schema_editor):$/;"	f
+add_post_data	blog/migrations/0002_post_data.py	/^def add_post_data(apps, schema_editor):$/;"	f
+add_slug_data	organizer/migrations/0005_newslink_slug.py	/^def add_slug_data(apps, schema_editor):$/;"	f
+add_startup_data	organizer/migrations/0003_startup_data.py	/^def add_startup_data(apps, schema_editor):$/;"	f
+add_tag_data	organizer/migrations/0002_tag_data.py	/^def add_tag_data(apps, schema_editor):$/;"	f
 application	suorganizer/wsgi.py	/^application = get_wsgi_application()$/;"	v
 clean_name	organizer/forms.py	/^    def clean_name(self):$/;"	m	class:TagForm
 clean_slug	blog/forms.py	/^    def clean_slug(self):$/;"	m	class:PostForm
 clean_slug	organizer/forms.py	/^    def clean_slug(self):$/;"	m	class:SlugCleanMixin
 contact	organizer/models.py	/^    contact = models.EmailField()$/;"	v	class:Startup
+default	organizer/migrations/0005_newslink_slug.py	/^                default=''),$/;"	v	class:Migration
 dependencies	blog/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	blog/migrations/0002_post_data.py	/^    dependencies = [$/;"	v	class:Migration
 dependencies	organizer/migrations/0001_initial.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	organizer/migrations/0002_tag_data.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	organizer/migrations/0003_startup_data.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	organizer/migrations/0004_newslink_data.py	/^    dependencies = [$/;"	v	class:Migration
+dependencies	organizer/migrations/0005_newslink_slug.py	/^    dependencies = [$/;"	v	class:Migration
 description	organizer/models.py	/^    description = models.TextField()$/;"	v	class:Startup
 field	organizer/migrations/0001_initial.py	/^            field=models.ForeignKey(on_delete=django.db.models.deletion.CASCADE, to='organizer.Startup'),$/;"	v	class:Migration
 field	organizer/migrations/0001_initial.py	/^            field=models.ManyToManyField(to='organizer.Tag'),$/;"	v	class:Migration
+field	organizer/migrations/0005_newslink_slug.py	/^            field=models.SlugField($/;"	v	class:Migration
 fields	blog/forms.py	/^        fields = '__all__'$/;"	v	class:PostForm.Meta
 fields	blog/migrations/0001_initial.py	/^            fields=[$/;"	v	class:Migration
 fields	organizer/forms.py	/^        fields = '__all__'$/;"	v	class:NewsLinkForm.Meta
@@ -110,6 +133,7 @@ get_delete_url	organizer/models.py	/^    def get_delete_url(self):$/;"	m	class:S
 get_delete_url	organizer/models.py	/^    def get_delete_url(self):$/;"	m	class:Tag
 get_latest_by	blog/models.py	/^        get_latest_by = 'pub_date'$/;"	v	class:Post.Meta
 get_latest_by	organizer/models.py	/^        get_latest_by = 'founded_date'$/;"	v	class:Startup.Meta
+get_latest_by	organizer/models.py	/^        get_latest_by = 'pub_date'$/;"	v	class:NewsLink.Meta
 get_object	blog/views.py	/^    def get_object(self, year, month, slug):$/;"	m	class:PostUpdate
 get_update_url	blog/models.py	/^    def get_update_url(self):$/;"	m	class:Post
 get_update_url	organizer/models.py	/^    def get_update_url(self):$/;"	m	class:NewsLink
@@ -118,6 +142,8 @@ get_update_url	organizer/models.py	/^    def get_update_url(self):$/;"	m	class:T
 initial	blog/migrations/0001_initial.py	/^    initial = True$/;"	v	class:Migration
 initial	organizer/migrations/0001_initial.py	/^    initial = True$/;"	v	class:Migration
 link	organizer/models.py	/^    link = models.URLField(max_length=255)$/;"	v	class:NewsLink
+max_length	organizer/migrations/0005_newslink_slug.py	/^                max_length=SLUG_LENGTH),$/;"	v	class:Migration
+max_length	organizer/migrations/0005_newslink_slug.py	/^                max_length=SLUG_LENGTH,$/;"	v	class:Migration
 model	blog/forms.py	/^        model = Post$/;"	v	class:PostForm.Meta
 model	blog/views.py	/^    model = Post$/;"	v	class:PostUpdate
 model	organizer/forms.py	/^        model = NewsLink$/;"	v	class:NewsLinkForm.Meta
@@ -131,6 +157,7 @@ model	organizer/views.py	/^    model = Tag$/;"	v	class:TagDelete
 model	organizer/views.py	/^    model = Tag$/;"	v	class:TagUpdate
 model_name	organizer/migrations/0001_initial.py	/^            model_name='newslink',$/;"	v	class:Migration
 model_name	organizer/migrations/0001_initial.py	/^            model_name='startup',$/;"	v	class:Migration
+model_name	organizer/migrations/0005_newslink_slug.py	/^            model_name='newslink',$/;"	v	class:Migration
 name	blog/apps.py	/^    name = 'blog'$/;"	v	class:BlogConfig
 name	blog/migrations/0001_initial.py	/^            name='Post',$/;"	v	class:Migration
 name	organizer/apps.py	/^    name = 'orgainzer'$/;"	v	class:OrgainzerConfig
@@ -139,13 +166,20 @@ name	organizer/migrations/0001_initial.py	/^            name='Startup',$/;"	v	cl
 name	organizer/migrations/0001_initial.py	/^            name='Tag',$/;"	v	class:Migration
 name	organizer/migrations/0001_initial.py	/^            name='startup',$/;"	v	class:Migration
 name	organizer/migrations/0001_initial.py	/^            name='tags',$/;"	v	class:Migration
+name	organizer/migrations/0005_newslink_slug.py	/^            name='slug',$/;"	v	class:Migration
 name	organizer/models.py	/^    name = models.CharField(max_length=31, db_index=True)$/;"	v	class:Startup
 name	organizer/models.py	/^    name = models.CharField(max_length=31, unique=True)$/;"	v	class:Tag
 operations	blog/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
+operations	blog/migrations/0002_post_data.py	/^    operations = [$/;"	v	class:Migration
 operations	organizer/migrations/0001_initial.py	/^    operations = [$/;"	v	class:Migration
+operations	organizer/migrations/0002_tag_data.py	/^    operations = [$/;"	v	class:Migration
+operations	organizer/migrations/0003_startup_data.py	/^    operations = [$/;"	v	class:Migration
+operations	organizer/migrations/0004_newslink_data.py	/^    operations = [$/;"	v	class:Migration
+operations	organizer/migrations/0005_newslink_slug.py	/^    operations = [$/;"	v	class:Migration
 options	blog/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
 options	organizer/migrations/0001_initial.py	/^            options={$/;"	v	class:Migration
-ordering	blog/models.py	/^        ordering = ['-pub_date','title']$/;"	v	class:Post.Meta
+ordering	blog/models.py	/^        ordering = ['-pub_date', 'title']$/;"	v	class:Post.Meta
+ordering	organizer/models.py	/^        ordering = ['-pub_date']$/;"	v	class:NewsLink.Meta
 ordering	organizer/models.py	/^        ordering = ['name']$/;"	v	class:Startup.Meta
 ordering	organizer/models.py	/^        ordering = ['name']$/;"	v	class:Tag.Meta
 post	blog/views.py	/^    def post(self, request):$/;"	m	class:PostCreate
@@ -161,18 +195,29 @@ post_detail	blog/views.py	/^def post_detail(request, year, month, slug):$/;"	f
 pub_date	blog/models.py	/^    pub_date = models.DateField('date published', auto_now_add=True)$/;"	v	class:Post
 pub_date	organizer/models.py	/^    pub_date = models.DateField('date published')$/;"	v	class:NewsLink
 redirect_root	suorganizer/views.py	/^def redirect_root(request):$/;"	f
+remove_newslink_data	organizer/migrations/0004_newslink_data.py	/^def remove_newslink_data(apps, schema_editor):$/;"	f
+remove_post_data	blog/migrations/0002_post_data.py	/^def remove_post_data(apps, schema_editor):$/;"	f
+remove_slug_data	organizer/migrations/0005_newslink_slug.py	/^def remove_slug_data(apps, schema_editor):$/;"	f
+remove_startup_data	organizer/migrations/0003_startup_data.py	/^def remove_startup_data(apps, schema_editor):$/;"	f
+remove_tag_data	organizer/migrations/0002_tag_data.py	/^def remove_tag_data(apps, schema_editor):$/;"	f
+reverse_code	organizer/migrations/0005_newslink_slug.py	/^            reverse_code=remove_slug_data$/;"	v	class:Migration
 slug	blog/models.py	/^    slug = models.SlugField(max_length=63, help_text='A label for URL config', unique_for_month='pub_date')$/;"	v	class:Post
 slug	organizer/models.py	/^    slug = models.SlugField(max_length=31, unique=True, help_text='A label for URL config.')$/;"	v	class:Startup
 slug	organizer/models.py	/^    slug = models.SlugField(max_length=31, unique=True, help_text='A label for URL config.')$/;"	v	class:Tag
+slug	organizer/models.py	/^    slug = models.SlugField(max_length=63)$/;"	v	class:NewsLink
 startup	organizer/models.py	/^    startup = models.ForeignKey(Startup, on_delete=models.CASCADE)$/;"	v	class:NewsLink
 startup_detail	blog/views.py	/^def startup_detail(request, slug):$/;"	f
+startup_detail	organizer/views.py	/^def startup_detail(request, slug):$/;"	f
 startup_list	blog/views.py	/^def startup_list(request):$/;"	f
+startup_list	organizer/views.py	/^def startup_list(request):$/;"	f
 startups	blog/models.py	/^    startups = models.ManyToManyField(Startup, related_name='blog_posts')$/;"	v	class:Post
 success_url	organizer/utils.py	/^    success_url = ''$/;"	v	class:ObjectDeleteMixin
 success_url	organizer/views.py	/^    success_url = reverse_lazy('organizer_startup_list')$/;"	v	class:StartupDelete
 success_url	organizer/views.py	/^    success_url = reverse_lazy('organizer_tag_list')$/;"	v	class:TagDelete
-tag_detail	blog/views.py	/^def tag_detail(request,slug):$/;"	f
+tag_detail	blog/views.py	/^def tag_detail(request, slug):$/;"	f
+tag_detail	organizer/views.py	/^def tag_detail(request, slug):$/;"	f
 tag_list	blog/views.py	/^def tag_list(request):$/;"	f
+tag_list	organizer/views.py	/^def tag_list(request):$/;"	f
 tags	blog/models.py	/^    tags = models.ManyToManyField(Tag, related_name='blog_posts')$/;"	v	class:Post
 tags	organizer/models.py	/^    tags = models.ManyToManyField(Tag)$/;"	v	class:Startup
 template_name	blog/views.py	/^    template_name = 'blog\/post_form.html'$/;"	v	class:PostCreate
@@ -193,8 +238,10 @@ template_name	organizer/views.py	/^    template_name = ('organizer\/tag_confirm_
 text	blog/models.py	/^    text = models.TextField()$/;"	v	class:Post
 title	blog/models.py	/^    title = models.CharField(max_length=63)$/;"	v	class:Post
 title	organizer/models.py	/^    title = models.CharField(max_length=63)$/;"	v	class:NewsLink
+unique_together	organizer/models.py	/^        unique_together = ('slug', 'startup')$/;"	v	class:NewsLink.Meta
 urlpatterns	blog/urls.py	/^urlpatterns = [$/;"	v
 urlpatterns	organizer/urls.py	/^urlpatterns = [$/;"	v
 urlpatterns	suorganizer/urls.py	/^urlpatterns = [$/;"	v
 verbose_name	blog/models.py	/^        verbose_name = 'blog post'$/;"	v	class:Post.Meta
+verbose_name	organizer/models.py	/^        verbose_name = 'news article'$/;"	v	class:NewsLink.Meta
 website	organizer/models.py	/^    website = models.URLField(max_length=255)$/;"	v	class:Startup

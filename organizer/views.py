@@ -9,7 +9,7 @@ from .forms import TagForm, NewsLinkForm, StartupForm
 from .utils import ObjectCreateMixin, ObjectUpdateMixin, ObjectDeleteMixin
 
 # Create your views here.
-class TagCreate(ObjectCreateMixin,View):
+class TagCreate(ObjectCreateMixin, View):
     form_class = TagForm
     template_name = 'organizer/tag_form.html'
 class TagDelete(ObjectDeleteMixin, View):
@@ -72,3 +72,18 @@ class NewsLinkDelete(View):
         startup = newslink.startup
         newslink.delete()
         return redirect(startup)
+
+def startup_detail(request, slug):
+    startup = get_object_or_404(Startup, slug__exact=slug)
+    return render(request, 'organizer/startup_detail.html', {'startup': startup})
+    
+def startup_list(request):
+    return  render(request, 'organizer/startup_list.html', {'startup_list': Startup.objects.all()}) 
+
+def tag_detail(request, slug):
+    tag = get_object_or_404(Tag, slug__exact=slug)
+    return render(request, 'organizer/tag_detail.html', {'tag': tag})
+
+def tag_list(request):
+  return render(request, 'organizer/tag_list.html', {'tag_list': Tag.objects.all()})
+
